@@ -22,6 +22,9 @@ RUN apt-get -y install usbutils
 RUN apt-get -y install git-cola
 RUN apt-get -y install software-properties-common
 RUN apt-get -y install libasound-dev
+RUN apt-get -y install mesa-utils 
+RUN apt-get -y install libgl1-mesa-glx
+
 RUN add-apt-repository -y ppa:gnuradio/gnuradio-releases-3.7
 #RUN add-apt-repository ppa:gnuradio/gnuradio-releases
 RUN apt-get update
