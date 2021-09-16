@@ -44,6 +44,8 @@ RUN pip3 install matplotlib
 RUN pip3 install scipy
 RUN pip3 install ipdb
 RUN pip3 install rpdb
+# for auto complete in ipython
+RUN pip3 install jedi==0.17.2
 
 ######## user settings ######
 RUN apt-get install sudo

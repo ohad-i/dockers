@@ -25,8 +25,11 @@ RUN apt-get -y install libasound-dev
 RUN apt-get -y install mesa-utils 
 RUN apt-get -y install libgl1-mesa-glx
 
-RUN add-apt-repository -y ppa:gnuradio/gnuradio-releases-3.7
-#RUN add-apt-repository ppa:gnuradio/gnuradio-releases
+
+#RUN add-apt-repository -y ppa:gnuradio/gnuradio-releases-3.7
+## for latest gnuradio:
+RUN apt-get -y install python3-gi gobject-introspection gir1.2-gtk-3.0
+RUN add-apt-repository ppa:gnuradio/gnuradio-releases
 RUN apt-get update
 RUN apt-get -y install gnuradio
 
@@ -50,25 +53,25 @@ RUN apt-get -y install libsoapysdr-dev libi2c-dev libusb-1.0-0-dev
 #install graphics dependencies
 RUN apt-get -y install libwxgtk3.0-dev freeglut3-dev
 
-RUN git clone https://github.com/myriadrf/LimeSuite.git \
-    && cd LimeSuite \
-    && git checkout stable \
-    && mkdir builddir && cd builddir \
-    && cmake ../ \
-    && make -j4 \
-    && make install \
-    && ldconfig 
+#RUN git clone https://github.com/myriadrf/LimeSuite.git \
+#    && cd LimeSuite \
+#    && git checkout stable \
+#    && mkdir builddir && cd builddir \
+#    && cmake ../ \
+#    && make -j4 \
+#    && make install \
+#    && ldconfig 
 
 #RUN apt-get -y install gr-limesdr
 RUN apt-get -y install swig
-RUN git clone https://github.com/myriadrf/gr-limesdr.git \
-    && cd gr-limesdr \
-    && mkdir build \
-    && cd build \
-    && cmake .. \
-    && make \
-    && make install \
-    && ldconfig
+#RUN git clone https://github.com/myriadrf/gr-limesdr.git \
+#    && cd gr-limesdr \
+#    && mkdir build \
+#    && cd build \
+#    && cmake .. \
+#    && make \
+#    && make install \
+#    && ldconfig
 
 
 
